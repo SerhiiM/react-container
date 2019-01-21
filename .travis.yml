@@ -8,8 +8,10 @@ before_install:
 script:
   - docker run docker-test-front  npm run test -- --coverage
 
-#deploy:
-#  provider: heroku
-#  api_key: $HEROKU_API_KEY
-#  on:
-#    branch: master
+deploy:
+  provider: heroku
+  app: docker-react-test-app
+  api_key:
+    secure: $HEROKU_API_KEY
+  on:
+    branch: master
